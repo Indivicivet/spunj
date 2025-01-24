@@ -17,6 +17,7 @@ this is a game.
 - if someone doesn't tick your PR within 48h ping them. if they don't tick after another 48h after that just merge it.
 - try not to shit over other people's code (so refactors should be done gently and when you have an endgoal in mind)
 - if there's a standard linter for whatever language(s) we're using, we can use that
+- the repo owner has godlike powers to do changes without PRs. they will try to keep this mostly to README / meta changes, like this.
 
 ### goals
 
