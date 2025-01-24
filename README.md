@@ -2,6 +2,10 @@
 
 spunj game
 
+## notes
+
+this is a game.
+
 # dev
 
 ## important
