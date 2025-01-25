@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh7udynsajuoj"]
+[gd_scene load_steps=3 format=3 uid="uid://dh7udynsajuoj"]
 
 [ext_resource type="PackedScene" uid="uid://cgq2xtrpxxccg" path="res://scenes/adspunjerer.tscn" id="1_k7ioq"]
+[ext_resource type="Theme" uid="uid://bw5etgvb4blem" path="res://assets/standard_theme.tres" id="2_k01np"]
 
 [node name="Game" type="Node2D"]
 
@@ -8,3 +9,20 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+
+[node name="txt_you_are_adventurer" type="RichTextLabel" parent="."]
+offset_left = -1011.0
+offset_top = -504.0
+offset_right = -212.0
+offset_bottom = -87.0
+theme = ExtResource("2_k01np")
+text = "You are an intrepid adventurer, the SPUNJ.
+Your goal is to acquire as many SPUNJ points as possible, to [[[[REDACTED]]]]"
+
+[node name="txt_action_box" type="RichTextLabel" parent="."]
+offset_left = -1018.0
+offset_top = 107.0
+offset_right = -127.0
+offset_bottom = 594.0
+theme = ExtResource("2_k01np")
+text = "What is your action?"
