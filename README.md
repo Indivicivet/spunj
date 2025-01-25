@@ -23,3 +23,7 @@ this is a game.
 
 - make [whatever this is] better!
 - all contributions welcome
+
+### info
+
+- godot 4.3
