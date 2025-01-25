@@ -22,6 +22,9 @@ func _process(delta: float) -> void:
 	
 	sprite.speed_scale = direction.length()
 	
+	if direction.length() == 0:
+		sprite.frame = 0
+	
 	pass
 
 
