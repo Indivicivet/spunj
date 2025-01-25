@@ -21,5 +21,5 @@ this is a game.
 
 ### goals
 
-- make whatever this is better!
+- make [whatever this is] better!
 - all contributions welcome
