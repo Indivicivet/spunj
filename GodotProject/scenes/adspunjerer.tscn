@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgq2xtrpxxccg"]
+[gd_scene load_steps=6 format=3 uid="uid://cgq2xtrpxxccg"]
 
-[ext_resource type="Texture2D" uid="uid://bbqhdbd0n6bta" path="res://assets/images/sponge0001.png" id="1_if661"]
+[ext_resource type="Texture2D" uid="uid://bbqhdbd0n6bta" path="res://assets/sprites/sponge0001.png" id="1_if661"]
+[ext_resource type="Script" path="res://scripts/adspunjerer.gd" id="1_s5hrl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18xas"]
 atlas = ExtResource("1_if661")
@@ -22,6 +23,7 @@ radius = 240.0
 height = 600.0
 
 [node name="Adspunjerer" type="CharacterBody2D"]
+script = ExtResource("1_s5hrl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_iuhvf")
