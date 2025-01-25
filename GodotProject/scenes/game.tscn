@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cgq2xtrpxxccg" path="res://scenes/adspunjerer.tscn" id="1_k7ioq"]
 [ext_resource type="Theme" uid="uid://bw5etgvb4blem" path="res://assets/standard_theme.tres" id="2_k01np"]
-[ext_resource type="Script" path="res://scenes/txt_reacts_to_inputs.gd" id="3_8vfqk"]
+[ext_resource type="Script" path="res://scripts/txt_reacts_to_inputs.gd" id="3_yyeyi"]
 
 [node name="Game" type="Node2D"]
 
@@ -27,4 +27,4 @@ offset_right = -127.0
 offset_bottom = 594.0
 theme = ExtResource("2_k01np")
 text = "What is your action?"
-script = ExtResource("3_8vfqk")
+script = ExtResource("3_yyeyi")
