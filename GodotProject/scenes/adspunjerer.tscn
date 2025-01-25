@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgq2xtrpxxccg"]
+
+[ext_resource type="Texture2D" uid="uid://bbqhdbd0n6bta" path="res://assets/images/sponge0001.png" id="1_if661"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18xas"]
+atlas = ExtResource("1_if661")
+region = Rect2(0, 0, 658, 490)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iuhvf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18xas")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oio1k"]
+radius = 240.0
+height = 600.0
+
+[node name="Adspunjerer" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iuhvf")
+frame_progress = 0.461162
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_oio1k")
