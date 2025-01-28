@@ -1,18 +1,18 @@
-extends Camera2D
+extends Node3D
 
-var adspunjerer : Adspunjerer2D
+var adspunjerer : Adspunjerer3D
+var camera : Camera3D
 
 # Using a hidden discretised logarithmic zoom level for peace of mind
 var zoom_level : int = log(5) / log(1.001)
 var min_zoom_level : int = 0
 var max_zoom_level : int = log(10) / log(1.001)
+var pixels_per_metre : int = 10000
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	adspunjerer = get_parent().get_node("Adspunjerer2D")
-	
-	pass # Replace with function body.
-
+	adspunjerer = get_parent().get_node("Adspunjerer3D")
+	camera = get_node("Camera3D")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -37,13 +37,8 @@ func _process(delta: float) -> void:
 	
 	var zoom_factor = pow(1.001, -zoom_level)
 	
-	if (position - adspunjerer.position).length_squared() < 1:
-		position = adspunjerer.position
-	else:
-		var catchup_factor = 0.05 * zoom_factor
-		position = (1 - catchup_factor) * position + catchup_factor * adspunjerer.position
+	var catchup_factor = 0.05 * zoom_factor
+	position.x = (1 - catchup_factor) * position.x + catchup_factor * adspunjerer.position.x
+	position.z = (1 - catchup_factor) * position.z + catchup_factor * adspunjerer.position.z
 	
-	zoom.x = zoom_factor
-	zoom.y = zoom_factor
-	
-	pass
+	camera.size = camera.get_viewport().get_visible_rect().size.y / (pixels_per_metre * zoom_factor)
