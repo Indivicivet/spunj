@@ -1,5 +1,4 @@
-
-class_name Adspunjerer extends CharacterBody2D
+class_name Adspunjerer2D extends CharacterBody2D
 
 var walk_speed : float = 2000.0
 var sprite : AnimatedSprite2D

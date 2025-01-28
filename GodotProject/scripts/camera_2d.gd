@@ -1,6 +1,6 @@
 extends Camera2D
 
-var adspunjerer : Adspunjerer
+var adspunjerer : Adspunjerer2D
 
 # Using a hidden discretised logarithmic zoom level for peace of mind
 var zoom_level : int = log(5) / log(1.001)
@@ -9,7 +9,7 @@ var max_zoom_level : int = log(10) / log(1.001)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	adspunjerer = get_parent().get_node("Adspunjerer")
+	adspunjerer = get_parent().get_node("Adspunjerer2D")
 	
 	pass # Replace with function body.
 
