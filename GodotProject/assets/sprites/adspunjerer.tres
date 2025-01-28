@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://rp0lejqwd5so"]
+
+[ext_resource type="Texture2D" uid="uid://bbqhdbd0n6bta" path="res://assets/sprites/sponge0001.png" id="1_hjpfn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up7xc"]
+atlas = ExtResource("1_hjpfn")
+region = Rect2(800, 0, 800, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46vv6"]
+atlas = ExtResource("1_hjpfn")
+region = Rect2(0, 0, 800, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74b0n"]
+atlas = ExtResource("1_hjpfn")
+region = Rect2(800, 0, 800, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0hqb"]
+atlas = ExtResource("1_hjpfn")
+region = Rect2(1600, 0, 800, 800)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up7xc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46vv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74b0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0hqb")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
