@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh7udynsajuoj"]
+[gd_scene load_steps=5 format=3 uid="uid://dh7udynsajuoj"]
 
 [ext_resource type="PackedScene" uid="uid://cgq2xtrpxxccg" path="res://scenes/adspunjerer.tscn" id="1_k7ioq"]
 [ext_resource type="Theme" uid="uid://bw5etgvb4blem" path="res://assets/standard_theme.tres" id="2_k01np"]
-[ext_resource type="Script" path="res://scripts/txt_reacts_to_inputs.gd" id="3_yyeyi"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_l23gl"]
+[ext_resource type="Script" path="res://scripts/txt_reacts_to_inputs.gd" id="3_yyeyi"]
 
 [node name="Game" type="Node2D"]
 
