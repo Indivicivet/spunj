@@ -1,6 +1,6 @@
 class_name Adspunjerer3D extends CharacterBody3D
 
-var walk_speed : float = 0.2
+var walk_speed : float = 20
 var sprite : AnimatedSprite3D
 
 var rng = RandomNumberGenerator.new()
