@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://blpc6pvpxt0j3"]
+[gd_scene load_steps=8 format=3 uid="uid://blpc6pvpxt0j3"]
 
 [ext_resource type="PackedScene" uid="uid://dcpc5ql4ujd1v" path="res://scenes/adspunjerer_3d.tscn" id="1_covkf"]
 [ext_resource type="Script" path="res://scripts/camera_pivot_3d.gd" id="1_mf45f"]
 [ext_resource type="Script" path="res://scripts/adspunjerer_3d.gd" id="2_c34sh"]
+[ext_resource type="Script" path="res://scripts/penny_spawner_3d.gd" id="4_knyrr"]
 [ext_resource type="Script" path="res://scenes/txt3d_reacts_to_input.gd" id="5_fy8n1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ty12r"]
+rough = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rd785"]
 
 [node name="Game3D" type="Node3D"]
 
@@ -14,13 +20,13 @@ script = ExtResource("2_c34sh")
 script = ExtResource("1_mf45f")
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 1, 1.732)
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 40, 69.282)
 projection = 1
-size = 0.2
+size = 10.0
 
 [node name="txt3d_action_box" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.00269567, -7.45058e-09, 0.104459)
-pixel_size = 0.0001
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 10.4)
+pixel_size = 0.01
 text = "What is your action?"
 font_size = 200
 autowrap_mode = 1
@@ -28,10 +34,20 @@ width = 4000.0
 script = ExtResource("5_fy8n1")
 
 [node name="txt3d_you_are_adventurer" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.00570451, 1.49012e-08, -0.158452)
-pixel_size = 0.0001
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -15.8)
+pixel_size = 0.01
 text = "You are an intrepid adventurer, the SPUNJ.
 Your goal is to acquire as many SPUNJ points as possible, to [[[[REDACTED]]]]"
 font_size = 200
 autowrap_mode = 2
 width = 4000.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ty12r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_rd785")
+
+[node name="PennySpawner3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+script = ExtResource("4_knyrr")

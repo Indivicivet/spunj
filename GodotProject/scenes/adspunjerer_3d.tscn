@@ -3,17 +3,23 @@
 [ext_resource type="SpriteFrames" uid="uid://rp0lejqwd5so" path="res://assets/sprites/adspunjerer.tres" id="2_1fu45"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_n0d67"]
-height = 0.03
-radius = 0.03
+margin = 0.0
+height = 3.0
+radius = 3.0
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_n0d67")
+[node name="Adspunjerer3D" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
-pixel_size = 0.0001
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 1.5, 0)
 sprite_frames = ExtResource("2_1fu45")
 animation = &"walk"
 autoplay = "walk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("CylinderShape3D_n0d67")

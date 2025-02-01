@@ -1,13 +1,13 @@
 extends Node3D
 
-var adspunjerer : Adspunjerer3D
+var adspunjerer : Node3D
 var camera : Camera3D
 
 # Using a hidden discretised logarithmic zoom level for peace of mind
 var zoom_level : int = log(5) / log(1.001)
 var min_zoom_level : int = 0
 var max_zoom_level : int = log(10) / log(1.001)
-var pixels_per_metre : int = 10000
+var pixels_per_metre : int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
