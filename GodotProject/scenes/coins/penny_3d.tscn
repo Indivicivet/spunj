@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/penny_3d.gd" id="1_5juj5"]
 [ext_resource type="Texture2D" uid="uid://cvfg4fv20riaq" path="res://assets/sprites/coins/1p/1p_obverse_new.png" id="2_6gl1j"]
 [ext_resource type="Texture2D" uid="uid://dnh5x4dgu4a1r" path="res://assets/sprites/coins/1p/1p_obverse_old.png" id="3_hog83"]
-[ext_resource type="Script" path="res://rotate_with_camera.gd" id="4_1ood3"]
+[ext_resource type="Script" path="res://scripts/rotate_with_camera.gd" id="4_1ood3"]
 [ext_resource type="Texture2D" uid="uid://bythgusp6t7go" path="res://assets/sprites/coins/1p/1p_rim_new.png" id="5_7sn2l"]
 [ext_resource type="Texture2D" uid="uid://cwtjyhox5mrvd" path="res://assets/sprites/coins/1p/1p_rim_old.png" id="6_rfhdw"]
 
