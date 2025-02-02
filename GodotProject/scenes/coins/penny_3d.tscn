@@ -12,7 +12,7 @@ rough = true
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_r56ou"]
 margin = 0.0
-height = 0.082
+height = 0.2
 radius = 1.015
 
 [node name="Penny3D" type="RigidBody3D"]
@@ -26,7 +26,7 @@ physics_material_override = SubResource("PhysicsMaterial_31kwp")
 script = ExtResource("1_5juj5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0)
 shape = SubResource("CylinderShape3D_r56ou")
 
 [node name="FaceSpriteContainer" type="Node3D" parent="."]
