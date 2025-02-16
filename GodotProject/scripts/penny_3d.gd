@@ -2,6 +2,8 @@ class_name Penny3D extends RigidBody3D
 
 var rng = RandomNumberGenerator.new()
 
+var is_wet: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rng.randomize()
