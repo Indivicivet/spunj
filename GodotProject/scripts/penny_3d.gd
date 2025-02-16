@@ -24,8 +24,3 @@ func _ready() -> void:
 	var oldness = rng.randf()
 	sprite_face_new.modulate.a = oldness
 	sprite_rim_new.modulate.a = oldness
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
