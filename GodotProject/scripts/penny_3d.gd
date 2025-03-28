@@ -10,6 +10,7 @@ var is_wet: bool = false
 @onready var sprite_container_rim : Node3D = get_node("RimSpriteContainer")
 @onready var sprite_rim_new : Sprite3D = sprite_container_rim.get_node("RimNew")
 @onready var sprite_rim_old : Sprite3D = sprite_container_rim.get_node("RimOld")
+@onready var wet_viz_cyl : Node3D = get_node("wet_viz_cyl")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,3 +25,8 @@ func _ready() -> void:
 	var oldness = rng.randf()
 	sprite_face_new.modulate.a = oldness
 	sprite_rim_new.modulate.a = oldness
+
+
+func sponge() -> void:
+	is_wet = false
+	wet_viz_cyl.visible = false

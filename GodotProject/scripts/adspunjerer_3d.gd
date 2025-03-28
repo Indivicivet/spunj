@@ -46,3 +46,4 @@ func _physics_process(delta: float) -> void:
 			var dp = collider.position - position
 			dp.z = 0
 			collider.apply_central_impulse(dp * 1000)
+			collider.sponge()  # todo :: probs want to use signals?
