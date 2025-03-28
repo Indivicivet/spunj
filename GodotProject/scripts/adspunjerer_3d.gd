@@ -12,6 +12,8 @@ var spunjelity: float = 3.5  # todo :: tuning
 var spunjelity_bonus_roll_n: int = 20  # it's like DnD?
 var wetness: float = 0.0
 
+signal new_wetness
+
 func get_spunj():
 	return spunjelity + rng.randi_range(1, spunjelity_bonus_roll_n)
 
@@ -50,5 +52,4 @@ func _physics_process(delta: float) -> void:
 			var did_spong = collider.sponge()  # todo :: probs want to use signals?
 			if did_spong:
 				wetness += 1
-				print(wetness)
-				
+				emit_signal("new_wetness", wetness)
