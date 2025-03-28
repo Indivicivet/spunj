@@ -10,6 +10,7 @@ var current_hp: int = TOTAL_HIT_POINTS
 var base_attack_power: float = 5.0
 var spunjelity: float = 3.5  # todo :: tuning
 var spunjelity_bonus_roll_n: int = 20  # it's like DnD?
+var wetness: float = 0.0
 
 func get_spunj():
 	return spunjelity + rng.randi_range(1, spunjelity_bonus_roll_n)
@@ -46,4 +47,8 @@ func _physics_process(delta: float) -> void:
 			var dp = collider.position - position
 			dp.z = 0
 			collider.apply_central_impulse(dp * 1000)
-			collider.sponge()  # todo :: probs want to use signals?
+			var did_spong = collider.sponge()  # todo :: probs want to use signals?
+			if did_spong:
+				wetness += 1
+				print(wetness)
+				

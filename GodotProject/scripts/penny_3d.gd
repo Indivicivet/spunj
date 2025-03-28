@@ -2,7 +2,7 @@ class_name Penny3D extends RigidBody3D
 
 var rng = RandomNumberGenerator.new()
 
-var is_wet: bool = false
+var is_wet: bool = true
 
 @onready var sprite_container_face : Node3D = get_node("FaceSpriteContainer")
 @onready var sprite_face_new : Sprite3D = sprite_container_face.get_node("FaceNew")
@@ -27,6 +27,9 @@ func _ready() -> void:
 	sprite_rim_new.modulate.a = oldness
 
 
-func sponge() -> void:
+func sponge() -> bool:
+	if not is_wet:
+		return false
 	is_wet = false
 	wet_viz_cyl.visible = false
+	return true
