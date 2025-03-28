@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://blpc6pvpxt0j3"]
+[gd_scene load_steps=7 format=3 uid="uid://blpc6pvpxt0j3"]
 
 [ext_resource type="PackedScene" uid="uid://dcpc5ql4ujd1v" path="res://scenes/adspunjerer_3d.tscn" id="1_covkf"]
 [ext_resource type="Script" path="res://scripts/camera_pivot_3d.gd" id="1_mf45f"]
 [ext_resource type="Script" path="res://scripts/adspunjerer_3d.gd" id="2_c34sh"]
 [ext_resource type="Script" path="res://scripts/penny_spawner_3d.gd" id="4_knyrr"]
 [ext_resource type="Script" path="res://scripts/txt3d_reacts_to_input.gd" id="4_sfwvd"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ty12r"]
-rough = true
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rd785"]
+[ext_resource type="Script" path="res://scenes/txt_wetness_display.gd" id="5_2r5om"]
 
 [node name="Game3D" type="Node3D"]
 
@@ -33,6 +29,15 @@ autowrap_mode = 1
 width = 4000.0
 script = ExtResource("4_sfwvd")
 
+[node name="wetness_box" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 18.1612)
+pixel_size = 0.01
+text = "Wetness: 0"
+font_size = 200
+autowrap_mode = 1
+width = 4000.0
+script = ExtResource("5_2r5om")
+
 [node name="txt3d_you_are_adventurer" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -15.8)
 pixel_size = 0.01
@@ -42,12 +47,8 @@ font_size = 200
 autowrap_mode = 2
 width = 4000.0
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_ty12r")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_rd785")
-
 [node name="PennySpawner3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
 script = ExtResource("4_knyrr")
+
+[connection signal="new_wetness" from="Adspunjerer3D" to="wetness_box" method="set_wetness_text"]
