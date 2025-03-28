@@ -43,6 +43,6 @@ func _physics_process(delta: float) -> void:
 	for i in range(get_slide_collision_count()):
 		var collider = get_slide_collision(i).get_collider()
 		if collider is Penny3D:
-			var dp = collider.position - position;
-			dp.z = 0;
-			collider.apply_central_impulse(dp * 1000);
+			var dp = collider.position - position
+			dp.z = 0
+			collider.apply_central_impulse(dp * 1000)
